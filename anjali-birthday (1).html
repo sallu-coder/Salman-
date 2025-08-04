@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Anjali! 🎉</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff69b4; /* Hot Pink */
+            --secondary-color: #ffb6c1; /* Light Pink */
+            --tertiary-color: #4b0082; /* Indigo */
+            --text-color: #333;
+            --bg-color: #fff0f5; /* Lavender Blush */
+            --shadow-light: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .countdown-container, .message-section, .surprise-section, .quiz-section {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            animation: slideInUp 1.5s ease-out;
+        }
+
+        .countdown-container {
+            background-color: var(--secondary-color);
+        }
+
+        .countdown-container p {
+            font-size: 1.2em;
+            color: var(--tertiary-color);
+            font-weight: 600;
+        }
+
+        #countdown {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 10px;
+        }
+
+        h3 {
+            color: var(--tertiary-color);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .message-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .heart-emoji {
+            color: red;
+            font-size: 1.2em;
+            margin: 0 5px;
+        }
+
+        .surprise-buttons, .quiz-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .surprise-btn, .quiz-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: var(--shadow-light);
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .surprise-btn:hover, .quiz-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: var(--tertiary-color);
+        }
+
+        .surprise-content {
+            margin-top: 20px;
+            border-top: 2px dashed var(--secondary-color);
+            padding-top: 20px;
+        }
+
+        .surprise-content.hidden {
+            display: none;
+        }
+
+        .surprise-content p {
+            font-size: 1.1em;
+            font-style: italic;
+            margin-top: 10px;
+            color: var(--primary-color);
+        }
+
+        #quiz-response {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--tertiary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #quiz-response img {
+            max-width: 100px;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 1em;
+            color: #888;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 1.2em; }
+            #countdown { font-size: 2em; }
+            .surprise-btn, .quiz-btn { font-size: 1em; padding: 12px 20px; }
+            .container { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Happy Birthday, Anjali! 🎉💖</h1>
+            <h2>To the best BFF in the world! 🌍✨</h2>
+        </header>
+
+        <section class="countdown-container">
+            <p>The surprises begin in...</p>
+            <div id="countdown"></div>
+        </section>
+
+        <section class="message-section">
+            <h3>A Special Message Just for You... 💌</h3>
+            <p>
+                My dearest Anjali, on your special day, I want you to know how much you mean to me. You're not just my best friend, you're my world. You've been there for me through thick and thin, and I'm so grateful for your kindness, your laughter, and your incredible spirit. May this new year of your life be filled with joy, success, and all the happiness you deserve. Wishing you a day as wonderful as you are! ❤️❤️❤️
+            </p>
+        </section>
+
+        <section class="surprise-section">
+            <h3>Time for Surprises! 🎁</h3>
+            <p>Click on the buttons below to reveal your birthday surprises!</p>
+            <div class="surprise-buttons">
+                <button class="surprise-btn" data-surprise="message1">Secret Wish 🤫</button>
+                <button class="surprise-btn" data-surprise="message2">A Memory 📸</button>
+                <button class="surprise-btn" data-surprise="message3">A Beautiful View 🏞️</button>
+                <button class="surprise-btn" data-surprise="message4">Your B'day Song 🎶</button>
+            </div>
+
+            <div id="surprise-area">
+                <div id="message1" class="surprise-content hidden">
+                    <p>I wish you find someone who loves and respects you for the beautiful person you are, but not before you become the CEO of your dream company! 👑✨</p>
+                </div>
+                <div id="message2" class="surprise-content hidden">
+                    <p>Remember that time we stayed up all night just talking about our dreams and fears? That's one of my favorite memories with you. I'll cherish our friendship forever. ❤️💫</p>
+                </div>
+                <div id="message3" class="surprise-content hidden">
+                    <p>Imagine this view with me, side by side. Wishing you a future as bright and beautiful as this! ✨</p>
+                </div>
+                <div id="message4" class="surprise-content hidden">
+                    <p>🎶 Happy birthday to you! Happy birthday to you! Happy birthday, dear Anjali... Happy birthday to you! 🎶 A classic for a classic friend! 😉</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <h3>One Last Question... 😉</h3>
+            <p>What do you say about this birthday surprise?</p>
+            <div class="quiz-buttons">
+                <button class="quiz-btn" data-answer="A">Thank you, Salman! ❤️</button>
+                <button class="quiz-btn" data-answer="B">Sabai lai thankyou 🎉</button>
+                <button class="quiz-btn" data-answer="C">Bholi ghumna jani? 🥰</button>
+                <button class="quiz-btn" data-answer="D">Special party dinxu 🥳</button>
+            </div>
+            <div id="quiz-response"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Created with love by your BFF ❤️</p>
+    </footer>
+
+    <script>
+        const birthdayDate = new Date("August 5, 2025 00:00:00").getTime();
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = birthdayDate - now;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "Happy Birthday! 🥳";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+
+        document.querySelectorAll('.surprise-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const surpriseId = this.getAttribute('data-surprise');
+                const surpriseElement = document.getElementById(surpriseId);
+
+                document.querySelectorAll('.surprise-content').forEach(content => {
+                    if (content.id !== surpriseId) {
+                        content.classList.add('hidden');
+                    }
+                });
+
+                surpriseElement.classList.toggle('hidden');
+
+                if (!surpriseElement.classList.contains('hidden')) {
+                    surpriseElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        });
+
+        document.querySelectorAll('.quiz-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const answer = this.getAttribute('data-answer');
+                const responseDiv = document.getElementById('quiz-response');
+
+                document.querySelectorAll('.quiz-btn').forEach(btn => {
+                    btn.style.backgroundColor = 'var(--primary-color)';
+                    btn.style.color = 'white';
+                });
+
+                if (answer === 'D') {
+                    const allButtons = document.querySelectorAll('.quiz-btn');
+                    allButtons.forEach(btn => {
+                        btn.disabled = true;
+                    });
+                    this.style.backgroundColor = 'green';
+                    responseDiv.innerHTML = `<p>Oooooo cool, yehi ta malai chahiyeko thiyo ni, party sangai ma sanga dherai time pani spend garnu parxa. 🎉🥳</p>`;
+                } else {
+                    this.style.backgroundColor = 'red';
+                    responseDiv.innerHTML = `<p>Nah, I want something else... 😉</p>`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
